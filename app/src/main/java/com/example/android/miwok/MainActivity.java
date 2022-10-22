@@ -18,7 +18,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView numbersTextView = findViewById(R.id.numbers_textview);
+        TextView familyTextView = findViewById(R.id.family_textview);
+        TextView colorsTextView = findViewById(R.id.colors_textview);
+        TextView phrasesTextView = findViewById(R.id.phrases_textview);
 
+        // Setting click listener on numbers textview
         numbersTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,21 +32,35 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
+        // Setting click listener on family textview
+        familyTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Family clicked", Toast.LENGTH_LONG).show();
+                Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
+                startActivity(familyIntent);
+            }
+        });
 
-    public void openFamilyMembersList(View view) {
-        Intent intent = new Intent(MainActivity.this, FamilyActivity.class);
-        startActivity(intent);
-    }
+        // Setting click listener on colors textview
+        colorsTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Colors clicked", Toast.LENGTH_LONG).show();
+                Intent colorIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(colorIntent);
+            }
+        });
 
-    public void openColorsList(View view) {
-        Intent intent = new Intent(MainActivity.this, ColorsActivity.class);
-        startActivity(intent);
-    }
+        // Setting click phrases on family textview
+        phrasesTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Phrases clicked", Toast.LENGTH_LONG).show();
+                Intent phraseIntent = new Intent(MainActivity.this, PhraseActivity.class);
+                startActivity(phraseIntent);
+            }
+        });
 
-    public void openPhrasesList(View view) {
-        Intent intent = new Intent(MainActivity.this, PhraseActivity.class);
-        startActivity(intent);
     }
-
 }
