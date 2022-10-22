@@ -8,9 +8,8 @@
     tools:context=".NumbersActivity">
 
     <TextView
-        android:id="@+id/numbers_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Numbers"/>
+        android:text="Numbers screen"/>
 
 </LinearLayout>

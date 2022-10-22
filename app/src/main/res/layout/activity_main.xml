@@ -10,10 +10,9 @@
     tools:context="com.example.android.miwok.MainActivity">
 
     <TextView
-        android:id="@+id/numbers"
+        android:id="@+id/numbers_textview"
         style="@style/CategoryStyle"
         android:background="@color/category_numbers"
-        android:onClick="openNumberList"
         android:text="@string/category_numbers" />
 
     <TextView
