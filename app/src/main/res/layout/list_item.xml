@@ -15,11 +15,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#000"
+        android:textSize="16sp"
         tools:text="lutti" />
 
     <TextView
         android:id="@+id/default_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="14sp"
         tools:text="one" />
 </LinearLayout>
