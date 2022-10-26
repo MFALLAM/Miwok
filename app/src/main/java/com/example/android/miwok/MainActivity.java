@@ -8,6 +8,11 @@ import android.widget.Toast;
 // import android.support.v7.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.android.miwok.activity.ColorsActivity;
+import com.example.android.miwok.activity.FamilyActivity;
+import com.example.android.miwok.activity.NumbersActivity;
+import com.example.android.miwok.activity.PhraseActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

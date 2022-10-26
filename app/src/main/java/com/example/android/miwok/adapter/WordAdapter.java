@@ -1,4 +1,4 @@
-package com.example.android.miwok.word;
+package com.example.android.miwok.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.android.miwok.R;
+import com.example.android.miwok.data.Word;
 
 import java.util.List;
 

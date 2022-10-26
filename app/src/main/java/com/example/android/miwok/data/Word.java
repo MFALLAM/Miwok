@@ -1,4 +1,4 @@
-package com.example.android.miwok.word;
+package com.example.android.miwok.data;
 
 public class Word {
     private String miwokTranslation;
