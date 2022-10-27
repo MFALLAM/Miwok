@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,9 +44,16 @@ public class NumberAdapter extends ArrayAdapter<Number> {
         // set this text on the name TextView
         miworkTv.setText(currentWord.getMiwokWord());
 
+        // Find the TextView in the list_item.xml layout with the ID miwok_textview
         TextView defaultTv = listItemView.findViewById(R.id.default_textview);
 
+        // Get the name from the current word object and
+        // set this text on the name TextView
         defaultTv.setText(currentWord.getDefaultTranslation());
+
+        ImageView imageView = listItemView.findViewById(R.id.miwok_image);
+
+        imageView.setImageResource(currentWord.getMiwiokImage());
 
         return listItemView;
     }

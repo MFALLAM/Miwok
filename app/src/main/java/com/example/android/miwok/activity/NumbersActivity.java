@@ -20,16 +20,16 @@ public class NumbersActivity extends AppCompatActivity {
 
         ArrayList<Number> numbers = new ArrayList<>();
 
-        numbers.add(new Number("Lutti", "One"));
-        numbers.add(new Number("otiiko", "Two"));
-        numbers.add(new Number("tolookosu", "Three"));
-        numbers.add(new Number("oyysia", "Four"));
-        numbers.add(new Number("massokka", "Five"));
-        numbers.add(new Number("temmokka", "Six"));
-        numbers.add(new Number("kenekaku", "Seven"));
-        numbers.add(new Number("kawinta", "Eight"));
-        numbers.add(new Number("wo'e", "Nine"));
-        numbers.add(new Number("na'aacha", "Ten"));
+        numbers.add(new Number("Lutti", "One", R.drawable.number_one));
+        numbers.add(new Number("otiiko", "Two", R.drawable.number_two));
+        numbers.add(new Number("tolookosu", "Three", R.drawable.number_three));
+        numbers.add(new Number("oyysia", "Four", R.drawable.number_four));
+        numbers.add(new Number("massokka", "Five", R.drawable.number_five));
+        numbers.add(new Number("temmokka", "Six", R.drawable.number_six));
+        numbers.add(new Number("kenekaku", "Seven", R.drawable.number_seven));
+        numbers.add(new Number("kawinta", "Eight", R.drawable.number_eight));
+        numbers.add(new Number("wo'e", "Nine", R.drawable.number_nine));
+        numbers.add(new Number("na'aacha", "Ten", R.drawable.number_ten));
 
         // Create a link WordAdapter, whose data source is a list of objects
         NumberAdapter wordAdapter = new NumberAdapter(NumbersActivity.this, 0, numbers);
