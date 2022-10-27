@@ -11,15 +11,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.android.miwok.R;
-import com.example.android.miwok.data.Word;
+import com.example.android.miwok.data.Number;
 
 import java.util.List;
 
-public class WordAdapter extends ArrayAdapter<Word> {
+public class NumberAdapter extends ArrayAdapter<Number> {
 
-    private static final String LOG_TAG = WordAdapter.class.getSimpleName();
+    private static final String LOG_TAG = NumberAdapter.class.getSimpleName();
 
-    public WordAdapter(@NonNull Context context, int resource, @NonNull List<Word> objects) {
+    public NumberAdapter(@NonNull Context context, int resource, @NonNull List<Number> objects) {
         super(context, 0, objects);
     }
 
@@ -34,7 +34,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         }
 
         // Get the current object at this position
-        Word currentWord = getItem(position);
+        Number currentWord = getItem(position);
 
         // Find the TextView in the list_item.xml layout with the ID miwok_textview
         TextView miworkTv = listItemView.findViewById(R.id.miwok_textview);

@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.example.android.miwok.R;
-import com.example.android.miwok.data.Word;
-import com.example.android.miwok.adapter.WordAdapter;
+import com.example.android.miwok.data.Number;
+import com.example.android.miwok.adapter.NumberAdapter;
 
 import java.util.ArrayList;
 
@@ -18,21 +18,21 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        ArrayList<Word> words = new ArrayList<>();
+        ArrayList<Number> numbers = new ArrayList<>();
 
-        words.add(new Word("Lutti", "One"));
-        words.add(new Word("otiiko", "Two"));
-        words.add(new Word("tolookosu", "Three"));
-        words.add(new Word("oyysia", "Four"));
-        words.add(new Word("massokka", "Five"));
-        words.add(new Word("temmokka", "Six"));
-        words.add(new Word("kenekaku", "Seven"));
-        words.add(new Word("kawinta", "Eight"));
-        words.add(new Word("wo'e", "Nine"));
-        words.add(new Word("na'aacha", "Ten"));
+        numbers.add(new Number("Lutti", "One"));
+        numbers.add(new Number("otiiko", "Two"));
+        numbers.add(new Number("tolookosu", "Three"));
+        numbers.add(new Number("oyysia", "Four"));
+        numbers.add(new Number("massokka", "Five"));
+        numbers.add(new Number("temmokka", "Six"));
+        numbers.add(new Number("kenekaku", "Seven"));
+        numbers.add(new Number("kawinta", "Eight"));
+        numbers.add(new Number("wo'e", "Nine"));
+        numbers.add(new Number("na'aacha", "Ten"));
 
         // Create a link WordAdapter, whose data source is a list of objects
-        WordAdapter wordAdapter = new WordAdapter(NumbersActivity.this, 0, words);
+        NumberAdapter wordAdapter = new NumberAdapter(NumbersActivity.this, 0, numbers);
 
         // Find the view ListView
         ListView listView = findViewById(R.id.activity_numbers_list_view);

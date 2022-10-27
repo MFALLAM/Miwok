@@ -1,10 +1,10 @@
 package com.example.android.miwok.data;
 
-public class Word {
+public class Number {
     private String miwokTranslation;
     private String defaultTranslation;
 
-    public Word(String miwokWord, String englishTranslation) {
+    public Number(String miwokWord, String englishTranslation) {
         this.miwokTranslation = miwokWord;
         this.defaultTranslation = englishTranslation;
     }
