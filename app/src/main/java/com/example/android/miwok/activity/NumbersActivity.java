@@ -32,13 +32,13 @@ public class NumbersActivity extends AppCompatActivity {
         numbers.add(new Number("na'aacha", "Ten", R.drawable.number_ten));
 
         // Create a link WordAdapter, whose data source is a list of objects
-        NumberAdapter wordAdapter = new NumberAdapter(NumbersActivity.this, 0, numbers);
+        NumberAdapter numbersAdapter = new NumberAdapter(NumbersActivity.this, 0, numbers, R.color.category_numbers);
 
         // Find the view ListView
         ListView listView = findViewById(R.id.activity_numbers_list_view);
 
         // Set the view to the adapter
-        listView.setAdapter(wordAdapter);
+        listView.setAdapter(numbersAdapter);
 
     }
 }

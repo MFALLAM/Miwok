@@ -32,7 +32,7 @@ public class FamilyActivity extends AppCompatActivity {
         family.add(new Family("grandfather", "paapa"));
 
         // Create a link WordAdapter, whose data source is a list of objects
-        FamilyAdapter familyAdapter = new FamilyAdapter(FamilyActivity.this, 0, family);
+        FamilyAdapter familyAdapter = new FamilyAdapter(FamilyActivity.this, 0, family, R.color.category_family);
 
         // Find the view ListView
         ListView listView = findViewById(R.id.activity_family_list_view);
