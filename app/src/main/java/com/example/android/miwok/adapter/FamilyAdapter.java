@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -41,7 +42,6 @@ public class FamilyAdapter extends ArrayAdapter<Family> {
             listViewItem = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
 
-
         // Get the current object at this position
         Family currentObject = getItem(position);
 
@@ -57,6 +57,16 @@ public class FamilyAdapter extends ArrayAdapter<Family> {
         // Get the name from the current word object and
         // set this text on the name TextView
         defaultTextView.setText(currentObject.getDefaultTranslation());
+
+        // Find the image view by id
+        ImageView imageView = listViewItem.findViewById(R.id.miwok_image);
+
+        if(currentObject.hasImage()) {
+            imageView.setImageResource(currentObject.getImgResourceId());
+            imageView.setVisibility(View.VISIBLE);
+        } else {
+            imageView.setVisibility(View.GONE);
+        }
 
         // Set the theme color for the list item
         View textContainer = listViewItem.findViewById(R.id.text_container);
