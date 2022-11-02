@@ -4,9 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -79,6 +81,21 @@ public class NumberAdapter extends ArrayAdapter<Number> {
 
         // Set the background color of the text container View
         textContainer.setBackgroundColor(color);
+
+        listItemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "You click on position:"+ position + currentObject.getDefaultTranslation(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+//                Toast.makeText(NumbersActivity.this, "You click on position:"+position, Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
 
         return listItemView;
     }

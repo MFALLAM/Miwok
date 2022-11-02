@@ -3,7 +3,10 @@ package com.example.android.miwok.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.android.miwok.R;
 import com.example.android.miwok.data.Number;
@@ -36,6 +39,13 @@ public class NumbersActivity extends AppCompatActivity {
 
         // Find the view ListView
         ListView listView = findViewById(R.id.activity_numbers_list_view);
+
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+//                Toast.makeText(NumbersActivity.this, "You click on position:"+position, Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
         // Set the view to the adapter
         listView.setAdapter(numbersAdapter);
