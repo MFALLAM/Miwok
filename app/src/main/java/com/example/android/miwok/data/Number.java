@@ -27,6 +27,11 @@ public class Number {
     private static final int NO_IMAGE_PRIVIDED = -1;
 
     /**
+     *
+     */
+    private int audioResourceId;
+
+    /**
      * Create a new Number object.
      *
      * @param englishTranslation is the word in a language that the user is already familiar with
@@ -34,10 +39,11 @@ public class Number {
      * @param miwokWord          is the word in the Miwok language
      * @param imageResourceId    is the drawable resource ID for the image associated with the word
      */
-    public Number(String miwokWord, String englishTranslation, int imageResourceId) {
+    public Number(String miwokWord, String englishTranslation, int imageResourceId, int audioResource) {
         this.miwokTranslation = miwokWord;
         this.defaultTranslation = englishTranslation;
         this.imgResourceId = imageResourceId;
+        this.audioResourceId = audioResource;
     }
 
     /**
@@ -67,5 +73,23 @@ public class Number {
      */
     public boolean hasImage() {
         return imgResourceId != NO_IMAGE_PRIVIDED;
+    }
+
+    /**
+     * Returns the audio source ID of the word
+     * @return int
+     */
+    public int getAudioResourceId() {
+        return audioResourceId;
+    }
+
+    @Override
+    public String toString() {
+        return "Number{" +
+                "miwokTranslation='" + miwokTranslation + '\'' +
+                ", defaultTranslation='" + defaultTranslation + '\'' +
+                ", imgResourceId=" + imgResourceId +
+                ", audioResourceId=" + audioResourceId +
+                '}';
     }
 }
