@@ -1,8 +1,15 @@
 package com.example.android.miwok.data;
 
 public class Phrase {
+
+    /**
+     *
+     */
     private String miwokTranslation;
 
+    /**
+     *
+     */
     private String defaultTranslation;
 
     /**
@@ -17,17 +24,27 @@ public class Phrase {
      */
     private static final int NO_IMAGE_PROVIDED = -1;
 
-    public Phrase(String miwokTranslation, String defaultTranslation, int imageResourceId) {
+    private int audioSourceId;
+
+    public Phrase(String miwokTranslation, String defaultTranslation, int imageResourceId, int audioSource) {
         this.miwokTranslation = miwokTranslation;
         this.defaultTranslation = defaultTranslation;
         this.imgResourceId = imageResourceId;
+        this.audioSourceId = audioSource;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getMiwokTranslation() {
         return miwokTranslation;
     }
 
-
+    /**
+     *
+     * @return
+     */
     public String getDefaultTranslation() {
         return defaultTranslation;
     }
@@ -46,5 +63,13 @@ public class Phrase {
      */
     public boolean hasImage() {
         return imgResourceId != NO_IMAGE_PROVIDED;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public int getAudioSourceId() {
+        return audioSourceId;
     }
 }

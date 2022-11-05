@@ -54,11 +54,11 @@
 
         <ImageView
             android:id="@+id/sound_imageview"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:paddingRight="16dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="16dp"
             android:layout_gravity="center"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/outline_play_arrow_white_48" />
     </LinearLayout>
 
 </LinearLayout>

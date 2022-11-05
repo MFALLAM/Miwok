@@ -20,10 +20,19 @@ public class NumbersActivity extends AppCompatActivity {
 
     private MediaPlayer mMediaPlayer;
 
+    private final MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mediaPlayer) {
+            releaseMediaPlayer();
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
+
+        Log.v("NumbersActivity", "onCreate Called().!");
 
         final ArrayList<Number> numbers = new ArrayList<>();
 
@@ -48,33 +57,72 @@ public class NumbersActivity extends AppCompatActivity {
         listView.setAdapter(numbersAdapter);
 
         // Set a click listener to play the audio when the list item is clicked on
-        listView.setOnItemClickListener((adapterView, view, position, l) -> {
-            // Get the current object at this position
-            Number currentObject = numbers.get(position);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-            mMediaPlayer = MediaPlayer.create(this, currentObject.getAudioResourceId());
-            mMediaPlayer.start();
+                // Get the current object at this position
+                Number currentObject = numbers.get(position);
 
-            mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                @Override
-                public void onCompletion(MediaPlayer mediaPlayer) {
-                    // Regardless of the current state of the media player, release its resources and free up the memory
-                    // because we no longer need it. This is memory-efficient.
-                    releaseMediaPlayer();
-                    Toast.makeText(NumbersActivity.this, "I am done", Toast.LENGTH_LONG).show();
-                }
-            });
+                releaseMediaPlayer();
+
+                mMediaPlayer = MediaPlayer.create(NumbersActivity.this, currentObject.getAudioResourceId());
+
+                mMediaPlayer.start();
+
+                mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        // Regardless of the current state of the media player, release its resources and free up the memory
+                        // because we no longer need it. This is memory-efficient.
+                        mMediaPlayer.setOnCompletionListener(mCompletionListener);
+                    }
+                });
+            }
         });
     }
 
     /**
      * Clean up the media player by releasing its resources.
+     *
      * @return void
      */
     private void releaseMediaPlayer() {
-        if(mMediaPlayer != null) {
+        if (mMediaPlayer != null) {
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
-     }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.v("NumbersActivity", "onStart Called().!");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.v("NumbersActivity", "onResume Called().!");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.v("NumbersActivity", "onPause Called().!");
+        releaseMediaPlayer();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.v("NumbersActivity", "onStop Called().!");
+        releaseMediaPlayer();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.v("NumbersActivity", "onDestroy Called().!");
+    }
 }
